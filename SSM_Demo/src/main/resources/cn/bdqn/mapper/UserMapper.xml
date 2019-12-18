@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.bdqn.mapper.UserMapper" >
+    <resultMap id="BaseResultMap" type="cn.bdqn.domain.User" >
+        <result column="username" property="userName" jdbcType="VARCHAR" />
+        <result column="passWord" property="passWord" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="Login" resultMap="BaseResultMap" parameterType="cn.bdqn.domain.User">
+        select username , password from user where username = #{userName} and password = #{passWord}
+    </select>
+
+
+</mapper>
